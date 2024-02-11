@@ -1,13 +1,11 @@
-import modulos.FuncionesCRUD as funciones
+import Datas.FuncionesCRUD as FCRUD
 
 def mostrar_menu():
     print("\nMenú:")
     print("1. Agregar nuevo camper")
     print("2. Mostrar información de campers")
     print("3. Agregar nuevo trainer")
-    print("4. Mostrar información de trainers")
-    print("5. Agregar nuevo coordinador")
-    print("6. Mostrar información de coordinadores")
+    print("4. Mostrar información de trainers")   
     print("7. Salir")
 
 def main():
@@ -16,11 +14,11 @@ def main():
         opcion = input("Seleccione una opción: ")
 
         if opcion == '1':
-            funciones.agregar_camper()
+            FCRUD.agregar_camper()
         elif opcion == '2':
-            funciones.mostrar_info_campers()
-        #elif opcion == '3':
-        #    funciones.agregar_trainer()
+            FCRUD.mostrar_info_campers()
+        elif opcion == '3':
+            FCRUD.actualizar_campers()
        # elif opcion == '4':
       #      funciones.mostrar_info_trainers()
      #   elif opcion == '5':
