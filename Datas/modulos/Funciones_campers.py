@@ -17,7 +17,7 @@ def agregar_camper():
     nuevo_camper["Acudiente"] = input("Ingrese El nombre del acudiente del nuevo camper: ")
     nuevo_camper["N_celular"] = input("Ingrese el numero de celular del nuevo camper: ")
     nuevo_camper["N_fijo"] = input("Ingrese el numero de teléfono fijo del nuevo camper: ")
-    nuevo_camper["Estado"] = "En proceso de ingreso"
+    nuevo_camper["Estado"] = "Inscrito"
 
     Data["Campers"].append(nuevo_camper)
 
@@ -81,19 +81,19 @@ def prueba_inicial():
         campers = Data["Campers"]
 
     while True:
-        ID_camper = int(input("Ingresa el id del Camper del cual deseas actualizar su nota de ingreso: "))
+        ID_camper = int(input("Ingresa el id del Camper del cual deseas ingresar la nota de su prueba inicial: "))
         for camper in campers:
             if camper["ID"] == ID_camper:
                 while True:
-                    nota_practica = int(input("Ingrese la nota practica de la prueba de ingreso: "))
+                    nota_practica = int(input("Ingrese la nota practica de la prueba de inicial: "))
                     if 0 <= nota_practica <= 100:
                         while True:
-                            nota_teorica = int(input("Ingrese la nota teorica de la prueba de ingreso: "))
+                            nota_teorica = int(input("Ingrese la nota teorica de la prueba de inicial: "))
                             if 0 <= nota_teorica <= 100:
                                 while True:
                                     nota_ingreso = nota_practica + nota_teorica/2
                                     if nota_ingreso >= 60:
-                                        camper["Estado"] = "Inscrito"
+                                        camper["Estado"] = "En proceso de ingreso"
                                         break
                                     else:
                                         camper["Estado"] = "Reprobado"

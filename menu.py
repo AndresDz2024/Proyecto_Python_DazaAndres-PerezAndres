@@ -1,4 +1,5 @@
 import Datas.modulos.Funciones_campers as FCRUD
+import Datas.modulos.Funciones_trainers as FCRUD2
 from os import system
 
 def mostrar_menu():
@@ -38,7 +39,7 @@ def main():
                 else:
                     print("Opción inválida. Por favor, seleccione una opción válida.")
         elif opcion == '2':
-            print("en mantenimiento")
+            FCRUD2.registrar_trainer()
         elif opcion == '3':
             print("¡Hasta luego usuario! ")
             break    
