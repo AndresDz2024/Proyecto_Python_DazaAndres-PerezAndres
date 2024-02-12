@@ -1,30 +1,18 @@
 {
     "Campers": [
         {
-            "N_documento": 1,
-            "nombre": "qwe",
-            "nombre2": "we",
-            "apellido": "rw",
-            "apellido2": "e",
-            "ciudad": "",
-            "Direccion": "f",
-            "Acudiente": "f",
-            "N_celular": "",
-            "N_fijo": "f",
-            "Estado": "En proceso de ingreso"
-        },
-        {
-            "N_documento": 2,
-            "nombre": "Andres",
-            "nombre2": "Santiago",
-            "apellido": "Daza",
-            "apellido2": "Daza",
-            "ciudad": "Bucaramanga",
-            "Direccion": "Calle tal # tal a tal",
-            "Acudiente": "Papa",
-            "N_celular": "3168116629",
-            "N_fijo": "678789",
-            "Estado": "En proceso de ingreso"
+            "ID": 1,
+            "N_documento": "1234321",
+            "nombre": "trtrtr",
+            "nombre2": "rtrtrt",
+            "apellido": "yutu",
+            "apellido2": "malo",
+            "ciudad": "yio",
+            "Direccion": "56",
+            "Acudiente": "fref",
+            "N_celular": "4354657689",
+            "N_fijo": "675698907",
+            "Estado": "Inscrito"
         }
     ]
 }
