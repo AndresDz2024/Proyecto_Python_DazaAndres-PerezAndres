@@ -24,15 +24,21 @@ def agregar_camper():
         json.dump(Data, outfile, indent=4)
 
 def mostrar_info_campers():
-     with open("Datas/Campers.json", "r") as outfile:
+    with open("Datas/Campers.json", "r") as outfile:
         Data = json.load(outfile)
 
         campers = Data["Campers"]
-        campers_ordenados = sorted(campers, key=lambda x: x["Acudiente"])
-        for i in campers_ordenados:
-            for key, value in i.items():
-                print(f"{key}: {value}")
-            print("\n")
+
+        ID_camper = int(input("Ingresa el id del Camper del que quieras ver la información: "))
+        print("\n")
+
+        for camper in campers: 
+            if camper["N_documento"] == ID_camper:
+                for key, value in camper.items():
+                    print(f"{key}: {value}")
+                print("\n")
+                        
+                        
 
 def actualizar_campers():
     editacion = open("Datas/Campers.json")
