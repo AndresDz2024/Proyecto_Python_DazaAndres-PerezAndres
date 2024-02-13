@@ -1,18 +1,3 @@
 {
-    "Campers": [
-        {
-            "ID": 1,
-            "N_documento": "1234321",
-            "nombre": "trtrtr",
-            "nombre2": "rtrtrt",
-            "apellido": "yutu",
-            "apellido2": "malo",
-            "ciudad": "yio",
-            "Direccion": "56",
-            "Acudiente": "fref",
-            "N_celular": "4354657689",
-            "N_fijo": "675698907",
-            "Estado": "En proceso de ingreso"
-        }
-    ]
+    "Campers": []
 }

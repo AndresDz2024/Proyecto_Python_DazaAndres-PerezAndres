@@ -6,8 +6,10 @@ def agregar_camper():
 
 
     nuevo_camper = {}
-    nuevo_camper["ID"] = int(input("Ingrese el ID del nuevo camper: "))
-    nuevo_camper["N_documento"] = int(input("Ingrese el numero de documento del nuevo camper: "))
+    ultimo_id = max([camper["ID"] for camper in Data["Campers"]], default=0)
+    nuevo_id = ultimo_id + 1
+    nuevo_camper["ID"] = nuevo_id
+    nuevo_camper["N_documento"] = input("Ingrese el numero de documento del nuevo camper: ")
     nuevo_camper["nombre"] = input("Ingrese el primer nombre del nuevo camper: ")
     nuevo_camper["nombre2"] = input("Ingrese el segundo nombre del nuevo camper: ")
     nuevo_camper["apellido"] = input("Ingrese el primer apellido del nuevo camper: ")
@@ -81,33 +83,36 @@ def prueba_inicial():
         campers = Data["Campers"]
 
     while True:
-        ID_camper = int(input("Ingresa el id del Camper del cual deseas ingresar la nota de su prueba inicial: "))
-        for camper in campers:
-            if camper["ID"] == ID_camper:
-                while True:
-                    nota_practica = int(input("Ingrese la nota practica de la prueba de inicial: "))
-                    if 0 <= nota_practica <= 100:
-                        while True:
-                            nota_teorica = int(input("Ingrese la nota teorica de la prueba de inicial: "))
-                            if 0 <= nota_teorica <= 100:
+        try:
+            ID_camper = int(input("Ingresa el id del Camper del cual deseas ingresar la nota de su prueba inicial: "))
+            for camper in campers:
+                if camper["ID"] == ID_camper:
+                    while True:
+                        try:
+                            nota_practica = int(input("Ingrese la nota práctica de la prueba inicial: "))
+                            if 0 <= nota_practica <= 100:
                                 while True:
-                                    nota_ingreso = nota_practica + nota_teorica/2
-                                    if nota_ingreso >= 60:
-                                        camper["Estado"] = "En proceso de ingreso"
-                                        break
-                                    else:
-                                        camper["Estado"] = "Reprobado"
-                                        break
-                                break
+                                    try:
+                                        nota_teorica = int(input("Ingrese la nota teórica de la prueba inicial: "))
+                                        if 0 <= nota_teorica <= 100:
+                                            nota_ingreso = nota_practica + nota_teorica / 2
+                                            if nota_ingreso >= 60:
+                                                camper["Estado"] = "En proceso de ingreso"
+                                            else:
+                                                camper["Estado"] = "Reprobado"
+                                            break  
+                                            print("Nota no válida, ingresa un valor de 0 a 100")
+                                    except ValueError:
+                                        print("Por favor, ingresa un valor numérico.")
+                                break  
                             else:
-                                print("Nota no valida, ingresa un valor de 0 a 100")
-                        break
-                    else:    
-                        print("Nota no valida, ingresa un valor de 0 a 100")
-                break        
-        break                     
+                                print("Nota no válida, ingresa un valor de 0 a 100")
+                        except ValueError:
+                            print("Por favor, ingresa un valor numérico.")
+                    break  
+            break  
+        except ValueError:
+            print("Por favor, ingresa un valor numérico para el ID del Camper.")
 
     with open("Datas/Campers.json", "w") as outfile:
         json.dump(Data, outfile, indent=4)
-
-                        

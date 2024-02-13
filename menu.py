@@ -8,6 +8,13 @@ def mostrar_menu():
     print("2. Acceder al menú de trainers ")
     print("3. Salir")
 
+def menu_trainers():
+    print("\nMenú de trainers:")
+    print("1. Agregar nuevo trainer")
+    print("2. Mostrar información de trainers")
+    print("3. asignar horario del trainer")
+    print("4. volver")    
+
 def menu_campers():
     print("\nMenú de coordinadores:")
     print("1. Agregar nuevo camper")
@@ -39,7 +46,21 @@ def main():
                 else:
                     print("Opción inválida. Por favor, seleccione una opción válida.")
         elif opcion == '2':
-            FCRUD2.registrar_trainer()
+            while True:
+                menu_trainers()
+                opcion = input("Seleccione una opción: ")
+                system("clear")
+                if opcion == '1':
+                    FCRUD2.registrar_trainer()
+                elif opcion == '2':
+                    FCRUD2.mostrar_info_trainers()
+                elif opcion == '3':
+                    FCRUD2.horario_trainer()    
+                elif opcion == '4':
+                    break
+                else:
+                    print("Opción inválida. Por favor, seleccione una opción válida.")
+
         elif opcion == '3':
             print("¡Hasta luego usuario! ")
             break    
