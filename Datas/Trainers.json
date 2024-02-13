@@ -1,5 +1,20 @@
 {
     "Trainers": [
-
+        {
+            "ID": 1,
+            "N_documento": "2121212",
+            "nombre": "Pedro",
+            "apellido": "Gomez",
+            "N_celular": "3145644",
+            "Horario": "10:00 a.m - 2:00 p.m"
+        },
+        {
+            "ID": 2,
+            "N_documento": "12343234",
+            "nombre": "Miguel",
+            "apellido": "Noce",
+            "N_celular": "345345345",
+            "Horario": "6:00 p.m - 10:00 p.m"
+        }
     ]
 }

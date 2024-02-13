@@ -29,17 +29,20 @@ def agregar_camper():
 def mostrar_info_campers():
     with open("Datas/Campers.json", "r") as outfile:
         Data = json.load(outfile)
-
         campers = Data["Campers"]
-
-        ID_camper = int(input("Ingresa el id del Camper del que quieras ver la información: "))
-        print("\n")
-
-        for camper in campers: 
-            if camper["ID"] == ID_camper:
-                for key, value in camper.items():
-                    print(f"{key}: {value}")
-                print("\n")
+    while True:
+        try:
+            ID_camper = int(input("Ingresa el id del Camper del que quieras ver la información: "))
+            print("\n")
+            for camper in campers: 
+                if camper["ID"] == ID_camper:
+                    for key, value in camper.items():
+                        print(f"{key}: {value}")
+                    print("\n")
+                    break                    
+            break    
+        except ValueError:
+            print("\nPor favor, ingresa un valor numérico para el ID del Camper.\n")
                         
                         
 
@@ -72,7 +75,6 @@ def actualizar_campers():
             camper["Acudiente"] = Acudiente
             camper["N_celular"] = N_celular
             camper["N_fijo"] = N_fijo
-            
     
     with open("Datas/Campers.json", "w") as outfile:
         json.dump(Data, outfile, indent=4)
@@ -97,11 +99,12 @@ def prueba_inicial():
                                         if 0 <= nota_teorica <= 100:
                                             nota_ingreso = nota_practica + nota_teorica / 2
                                             if nota_ingreso >= 60:
-                                                camper["Estado"] = "En proceso de ingreso"
+                                                camper["Estado"] = "Aprobado"
                                             else:
                                                 camper["Estado"] = "Reprobado"
-                                            break  
-                                            print("Nota no válida, ingresa un valor de 0 a 100")
+                                            break
+                                        else:
+                                            print("Por favor ingresa un valor de 0 a 100 ")  
                                     except ValueError:
                                         print("Por favor, ingresa un valor numérico.")
                                 break  
@@ -109,7 +112,7 @@ def prueba_inicial():
                                 print("Nota no válida, ingresa un valor de 0 a 100")
                         except ValueError:
                             print("Por favor, ingresa un valor numérico.")
-                    break  
+                    break
             break  
         except ValueError:
             print("Por favor, ingresa un valor numérico para el ID del Camper.")
