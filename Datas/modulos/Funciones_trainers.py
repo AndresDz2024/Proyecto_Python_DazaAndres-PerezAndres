@@ -87,6 +87,39 @@ def horario_trainer():
         json.dump(Data, outfile, indent=4)                
 
 
+# def horario_trainer():
+#     with open("Datas/Trainers.json", "r") as outfile:
+#         Data = json.load(outfile)
+
+#     trainers = Data["Trainers"]
+#     while True:
+#         try:
+#             ID_trainer = int(input("Ingrese el ID del trainer al cual desea asignarle un horario: "))
+#             for trainer in trainers:
+#                 if trainer["ID"] == ID_trainer:
+#                     print("\nHorarios:")
+#                     print("1. Mañana (6:00 a.m - 2:00 p.m)")
+#                     print("2. Tarde (2:00 p.m - 10:00 p.m)")
+                    
+#                     opcion = input("Seleccione el horario a asignar: ")
+#                     system("clear")
+
+#                     if opcion == '1':
+#                         horario = "Mañana (6:00 a.m - 2:00 p.m)"
+#                         trainer["Horario"] = horario
+#                     elif opcion == '2':
+#                         horario = "Tarde (2:00 p.m - 10:00 p.m)"
+#                         trainer["Horario"] = horario
+#                     else:
+#                         print("Ingrese una opción válida")
+#         except ValueError:
+#             print("\nIngrese un valor numérico")
+#         break
+
+#     with open("Datas/Trainers.json", "w") as outfile:
+#         json.dump(Data, outfile, indent=4)
+
+
         
         
 

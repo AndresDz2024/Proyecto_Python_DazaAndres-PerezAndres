@@ -69,3 +69,43 @@ def Crear_salon():
 
     with open("Datas/Salones.json", "w") as file:
         json.dump(data, file, indent=4)
+
+
+# def crear_salon():
+#     with open("Datas/Salones.json", "r") as file:
+#         data = json.load(file)
+
+#     nuevo_salon = {}
+#     ultimo_id = max([salon["Id"] for salon in data["Salones"]], default=0) + 1
+#     nuevo_salon["Id"] = ultimo_id
+#     nuevo_salon["nombre del grupo"] = input("Ingrese el nombre del salón: ")
+
+#     with open("Datas/Trainers.json", "r") as file:
+#         trainers_data = json.load(file)["Trainers"]
+
+#     while True:
+#         try:
+#             id_trainer = int(input("Ingrese el ID del Trainer que se encargará de este salón: "))
+#             for trainer in trainers_data:
+#                 if trainer["ID"] == id_trainer:
+#                     for salon_existente in data["Salones"]:
+#                         if salon_existente["Trainer_encargado"] == trainer["nombre"] and salon_existente["Horario_de_grupo"] == trainer["Horario"]:
+#                             print("El entrenador ya tiene un grupo en este horio.")
+#                             break
+#                     else:
+#                         nuevo_salon["Trainer_encargado"] = trainer["nombre"]
+#                         nuevo_salon["Horario_de_grupo"] = trainer["Horario"]
+#                         break
+#             else:
+#                 print("El ID del Trainer no existe. Por favor, ingrese un ID válido.")
+#                 continue
+#             break
+#         except ValueError:
+#             print("Por favor, ingrese un valor numérico.")
+
+#     nuevo_salon["Ruta"] = menu_rutas()
+#     nuevo_salon["Salon"] = menu_areas()
+#     data["Salones"].append(nuevo_salon)
+
+#     with open("Datas/Salones.json", "w") as file:
+#         json.dump(data, file, indent=4)
