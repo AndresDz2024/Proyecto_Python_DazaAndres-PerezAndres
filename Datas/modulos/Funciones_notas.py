@@ -91,6 +91,9 @@ def registrar_notas_filtros():
 
             nota_modulo["nota final del modulo"] = nota_final
 
+            if nota_final < 60:
+                found_camper["Riesgo"] = "Riesgo alto"
+
             break
     else:
         nota_teorica = ingresar_nota("Ingresa el valor de la nota teorica: ")
@@ -103,6 +106,9 @@ def registrar_notas_filtros():
             "nombre del modulo": nombre_modulo,
             "nota final del modulo": nota_final,
         })
+
+        if nota_final < 60:
+            found_camper["Riesgo"] = "Riesgo alto"
 
     # Actualizar la información en el archivo JSON
     notas_data[str(ID_camper)] = notas

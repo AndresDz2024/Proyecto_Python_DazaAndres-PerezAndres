@@ -5,16 +5,40 @@
             "nombre del grupo": "p1",
             "Ruta": "NodeJS",
             "Salon": "Sputnik",
-            "Fecha de inicio": "12/12/23",
-            "Fecha de finalizacion": "12/12/24",
+            "Fecha de inicio": "17-05-23",
+            "Fecha de finalizacion": "17-05-24",
             "Horario": "6:00 am - 10:00 am",
             "Trainer_encargado": "Pedro",
             "Campers_registrados": [
                 {
                     "ID": 1,
-                    "N_documento": "3456",
-                    "nombre": "Andres",
-                    "apellido": "Daza"
+                    "N_documento": "121212",
+                    "nombre": "ds<zf",
+                    "apellido": "zxdvzx"
+                },
+                {
+                    "ID": 2,
+                    "N_documento": "5656565768678",
+                    "nombre": "gsgsd",
+                    "apellido": "dgsdgs"
+                }
+            ]
+        },
+        {
+            "Id": 2,
+            "nombre del grupo": "p2",
+            "Ruta": "NodeJS",
+            "Salon": "Sputnik",
+            "Fecha de inicio": "12/09/23",
+            "Fecha de finalizacion": "12/09/24",
+            "Horario": "6:00 pm - 10:00 pm",
+            "Trainer_encargado": "uwu",
+            "Campers_registrados": [
+                {
+                    "ID": 3,
+                    "N_documento": "3",
+                    "nombre": "2",
+                    "apellido": "dgfdgr"
                 }
             ]
         }

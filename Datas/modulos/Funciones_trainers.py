@@ -66,7 +66,7 @@ def jornada_trainer():
                     system("clear")
 
                     if opcion == '1':
-                        jornada = "Mañana"
+                        jornada = "Manana"
                         trainer["Jornada"] = jornada
                     elif opcion == '2':
                         jornada = "Tarde"
