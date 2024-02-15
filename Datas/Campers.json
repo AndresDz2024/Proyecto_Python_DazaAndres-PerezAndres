@@ -2,31 +2,32 @@
     "Campers": [
         {
             "ID": 1,
-            "N_documento": "12121212",
+            "N_documento": "3456",
             "nombre": "Andres",
             "nombre2": "Santiago",
             "apellido": "Daza",
-            "apellido2": "DAza",
-            "ciudad": "giron",
-            "Direccion": "328376293",
-            "Acudiente": "papa",
-            "N_celular": "23792837",
-            "N_fijo": "298379823",
+            "apellido2": "Daza",
+            "ciudad": "Giron",
+            "Direccion": "Calle tal # tal - tal",
+            "Acudiente": "Papa",
+            "N_celular": "3168116629",
+            "N_fijo": "6164946",
             "Estado": "Aprobado"
         },
         {
             "ID": 2,
-            "N_documento": "121212",
-            "nombre": "323232",
-            "nombre2": "232 e1qwdq",
-            "apellido": "dfqdwq",
-            "apellido2": "wdqwdq",
-            "ciudad": "wdq3weq",
-            "Direccion": "wdqwdq",
-            "Acudiente": "wdqwd",
-            "N_celular": "qwdqwd",
-            "N_fijo": "qwdq",
-            "Estado": "Inscrito"
+            "N_documento": "21218279",
+            "nombre": "khwdgwiud",
+            "nombre2": "sudhgisud",
+            "apellido": "sdbsghdis",
+            "apellido2": "sdsbgdhi",
+            "ciudad": "sdshduos",
+            "Direccion": "sdhsjld",
+            "Acudiente": "sdhso\u001b[3~",
+            "N_celular": "3434",
+            "N_fijo": "3535",
+            "Estado": "Aprobado",
+            "Riesgo": "Riesgo alto"
         }
     ]
 }

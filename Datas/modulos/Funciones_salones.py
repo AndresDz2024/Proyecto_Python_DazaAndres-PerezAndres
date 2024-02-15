@@ -47,6 +47,8 @@ def crear_salon():
     nuevo_salon["nombre del grupo"] = input("Ingrese el nombre del salón: ")
     nuevo_salon["Ruta"] = menu_rutas()
     nuevo_salon["Salon"] = menu_areas()
+    nuevo_salon["Fecha de inicio"] = input("Ingrese la fecha de inicio del grupo: ")
+    nuevo_salon["Fecha de finalizacion"] = input("Ingrese la fecha de finalización del grupo: ")
 
     with open("Datas/Trainers.json", "r") as file:
         trainers_data = json.load(file)["Trainers"]
@@ -154,6 +156,10 @@ def metercamper_salon():
                 print("No se encontró ningún grupo con el ID ingresado.\n")
                 break
             
+            if len(salon_encontrado.get("Campers_registrados", [])) >= 33:
+                print("El grupo ya tiene el máximo de campers inscritos.\n")
+                break
+            
             if any(camper["ID"] == id_camper for camper in salon_encontrado.get("Campers_registrados", [])):
                 print("El Camper ya está registrado en este grupo.\n")
                 break
@@ -173,3 +179,33 @@ def metercamper_salon():
             break
         except ValueError:
             print("\nIngrese un ID válido.")
+            
+def mostrar_info_salones():
+    try:
+        with open("Datas/Salones.json", "r") as outfile:
+            data = json.load(outfile)
+            salones = data["Salones"]
+        
+        id_salon = int(input("Ingresa el ID del salón del que quieres ver la información: "))
+        print("\n")
+        
+        salon_encontrado = next((salon for salon in salones if salon["Id"] == id_salon), None)
+        
+        if salon_encontrado:
+            for key, value in salon_encontrado.items():
+                print(f"{key}: {value}")
+            print("\n")
+            
+            campers_registrados = salon_encontrado.get("Campers_registrados", [])
+            if campers_registrados:
+                print("Campers registrados:")
+                for camper in campers_registrados:
+                    for key, value in camper.items():
+                        print(f"{key}: {value}")
+                    print("\n")
+            else:
+                print("No hay campers registrados en este salón.")
+        else:
+            print("No se encontró ningún salón con el ID ingresado.")
+    except ValueError:
+        print("\nPor favor, ingresa un valor válido.")        

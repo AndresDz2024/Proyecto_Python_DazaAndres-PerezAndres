@@ -1,5 +1,13 @@
 import json
 
+def ingresar_numero(mensaje):
+    while True:
+        valor = input(mensaje)
+        if valor.isdigit():  # Verifica si la entrada consiste solo en dígitos
+            return valor
+        else:
+            print("Por favor, ingrese un valor numérico.")
+
 def agregar_camper():
     with open("Datas/Campers.json", "r") as outfile:
         Data = json.load(outfile)
@@ -9,7 +17,7 @@ def agregar_camper():
     ultimo_id = max([camper["ID"] for camper in Data["Campers"]], default=0)
     nuevo_id = ultimo_id + 1
     nuevo_camper["ID"] = nuevo_id
-    nuevo_camper["N_documento"] = input("Ingrese el numero de documento del nuevo camper: ")
+    nuevo_camper["N_documento"] = ingresar_numero("Ingrese el numero de documento del nuevo camper: ")
     nuevo_camper["nombre"] = input("Ingrese el primer nombre del nuevo camper: ")
     nuevo_camper["nombre2"] = input("Ingrese el segundo nombre del nuevo camper: ")
     nuevo_camper["apellido"] = input("Ingrese el primer apellido del nuevo camper: ")
@@ -17,9 +25,10 @@ def agregar_camper():
     nuevo_camper["ciudad"] = input("Ingrese la ciudad del nuevo camper: ")
     nuevo_camper["Direccion"] = input("Ingrese la Dirección del nuevo camper: ")
     nuevo_camper["Acudiente"] = input("Ingrese El nombre del acudiente del nuevo camper: ")
-    nuevo_camper["N_celular"] = input("Ingrese el numero de celular del nuevo camper: ")
-    nuevo_camper["N_fijo"] = input("Ingrese el numero de teléfono fijo del nuevo camper: ")
+    nuevo_camper["N_celular"] = ingresar_numero("Ingrese el numero de celular del nuevo camper: ")
+    nuevo_camper["N_fijo"] = ingresar_numero("Ingrese el numero de teléfono fijo del nuevo camper: ")
     nuevo_camper["Estado"] = "Inscrito"
+    nuevo_camper["Riesgo"] = "Sin riesgo"
 
     Data["Campers"].append(nuevo_camper)
 
@@ -54,7 +63,7 @@ def actualizar_campers():
     for camper in campers:
         if camper["ID"] == ID_camper:
             
-            N_documento = input("Ingresa el nuevo numero de documento: ")
+            N_documento = ingresar_numero("Ingresa el nuevo numero de documento: ")
             nombre = input("Ingresa el nuevo primer nombre: ") 
             nombre2 = input("Ingresa el nuevo segundo nombre: ")
             apellido = input("Ingresa el nuevo apellido: ")
@@ -62,8 +71,8 @@ def actualizar_campers():
             ciudad = input("Ingresa la nueva ciudad: ")
             Direccion = input("Ingrese la nueva direccion: ")
             Acudiente = input("Ingresa el nuevo nombre del acudiente: ")
-            N_celular = input("Ingresa el nuevo numero de celular: ")
-            N_fijo = input("Ingresa el nuevo numero de teléfono fijo: ")
+            N_celular = ingresar_numero("Ingresa el nuevo numero de celular: ")
+            N_fijo = ingresar_numero("Ingresa el nuevo numero de teléfono fijo: ")
             
             camper["N_documento"] = N_documento
             camper["nombre"] = nombre

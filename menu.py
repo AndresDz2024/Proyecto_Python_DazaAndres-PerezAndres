@@ -1,6 +1,7 @@
 import Datas.modulos.Funciones_campers as FCRUD
 import Datas.modulos.Funciones_trainers as FCRUD2
 import Datas.modulos.Funciones_salones as FCRUD3
+import Datas.modulos.Funciones_notas as FCRUD4
 from os import system
 
 def mostrar_menu():
@@ -25,7 +26,9 @@ def menu_coordinadores():
     print("4. Registrar notas prueba de admisión") 
     print("5. Crear nuevo salon")
     print("6. Ingresar camper a un salon")
-    print("7. Atras")
+    print("7. Mostrar información de los grupos")
+    print("8. Registrar notas de los modulos (Filtros)")
+    print("9. Atras")
 
 def main():
     while True:
@@ -48,8 +51,12 @@ def main():
                 elif opcion == '5':
                     FCRUD3.crear_salon()
                 elif opcion == '6':
-                    FCRUD3.metercamper_salon()            
+                    FCRUD3.metercamper_salon()
                 elif opcion == '7':
+                    FCRUD3.mostrar_info_salones()
+                elif opcion == '8':
+                    FCRUD4.registrar_notas_filtros()        
+                elif opcion == '9':
                     break
                 else:
                     print("Opción inválida. Por favor, seleccione una opción válida.")

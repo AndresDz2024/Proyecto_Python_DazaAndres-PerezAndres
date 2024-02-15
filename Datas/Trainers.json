@@ -2,10 +2,10 @@
     "Trainers": [
         {
             "ID": 1,
-            "N_documento": "123",
-            "nombre": "wewewe",
-            "apellido": "wdwdwd",
-            "N_celular": "wdwdwdw",
+            "N_documento": "123456789",
+            "nombre": "Pedro",
+            "apellido": "Gomez",
+            "N_celular": "314546576",
             "Jornada": "Ma\u00f1ana"
         }
     ]
