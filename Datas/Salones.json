@@ -41,27 +41,6 @@
                     "apellido": "dgfdgr"
                 }
             ]
-        },
-        {
-            "Id": 3,
-            "nombre del grupo": "p3",
-            "Ruta": "NetCore",
-            "Salon": "Apolo",
-            "Fecha de inicio": "",
-            "Fecha de finalizacion": "",
-            "Trainer_encargado": "asdcasdc",
-            "Campers_registrados": []
-        },
-        {
-            "Id": 4,
-            "nombre del grupo": "p3",
-            "Ruta": "NetCore",
-            "Salon": "Apolo",
-            "Fecha de inicio": "",
-            "Fecha de finalizacion": "",
-            "Horario": "2:00 pm - 6:00 pm",
-            "Trainer_encargado": "uwu",
-            "Campers_registrados": []
         }
     ]
 }
