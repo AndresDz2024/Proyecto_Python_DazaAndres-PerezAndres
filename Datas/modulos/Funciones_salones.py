@@ -73,7 +73,7 @@ def crear_salon():
                                 nuevo_salon["Horario"] = horario
                                 break
                             else:
-                                print("Opción no válida")           
+                                print("Opción no válida")
                         elif trainer["Jornada"] == "Tarde":
                             print("Elige uno de los dos horarios disponibles para la jornada en la que el trainer está disponible:\n ")
                             print("1. 2:00 pm - 6:00 pm")
@@ -88,8 +88,10 @@ def crear_salon():
                                 nuevo_salon["Horario"] = horario
                                 break
                             else:
-                                print("Opción no válida")        
-
+                                print("Opción no válida")
+                        elif trainer["Jornada"] == "No asignada":
+                            print("El entrenador aún no tiene una jornada asignada.")        
+                        break    
                     for salon_existente in data["Salones"]:
                         if "Trainer_encargado" in salon_existente and salon_existente["Trainer_encargado"] == trainer["nombre"] and salon_existente["Horario"] == nuevo_salon["Horario"] and salon_existente["Salon"] == nuevo_salon["Salon"]:
                             print("\nEl entrenador ya tiene un grupo en este horario y salón.")
@@ -105,11 +107,16 @@ def crear_salon():
         except ValueError:
             print("\nPor favor, ingrese un valor numérico.")
 
-    nuevo_salon["Campers_registrados"] = []        
+    nuevo_salon["Campers_registrados"] = []
 
     with open("Datas/Salones.json", "w") as file:
         json.dump(data, file, indent=4)
 
+
+        nuevo_salon["Campers_registrados"] = []
+
+    with open("Datas/Salones.json", "w") as file:
+        json.dump(data, file, indent=4)
 
 def cargar_datos():
     with open("Datas/Campers.json", "r") as file:
